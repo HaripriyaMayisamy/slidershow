@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto-Image Slider</title>
+    <link rel="stylesheet" href="slider.css">
+</head>
+<body>
+    <marquee><h1>WELCOME TO THE COFFEE SHOP</h1></marquee>
+    <h1>AUTO IMAGE SLIDER</h1>
+    <div class="slide-frame">
+        <div class="slide-images">
+            <div class="img-container">
+                <img src="https://m.media-amazon.com/images/I/71g9azd7bvL._AC_UF1000,1000_QL80_DpWeblab_.jpg" alt="Nature Image 1">
+            </div>
+            <div class="img-container">
+                <img src="https://img.freepik.com/free-vector/black-white-coffee-shop-background_125540-817.jpg?size=626&ext=jpg&ga=GA1.1.2113030492.1719964800&semt=ais_user" alt="Nature Image 2">
+            </div>
+            <div class="img-container">
+                <img src="https://i.ytimg.com/vi/-iInL5yN5cI/maxresdefault.jpg" alt="Nature Image 3">
+            </div>
+            <div class="img-container">
+                <img src="https://c0.wallpaperflare.com/preview/1003/800/33/cafe-lunch-coffee-shop.jpg" alt="Nature Image 1">
+            </div>
+            <div class="img-container">
+                <img src="https://cdn.pixabay.com/photo/2016/11/29/12/54/cafe-1869656_1280.jpg" alt="Nature Image 1">
+            </div>
+            <div class="img-container">
+                <img src="https://media.gettyimages.com/id/1175943507/photo/busy-coffee-shop-with-customers-sitting-down.jpg?s=612x612&w=gi&k=20&c=avwU9RSQrt1YK6WQ9P2xAK2iX3HfQgFe0PNEmJY8_v0=" alt="Nature Image 1">
+            </div>
+            <div class="img-container">
+               
+                    <img src="https://images.pexels.com/photos/2074130/pexels-photo-2074130.jpeg?cs=srgb&dl=pexels-viktoria-alipatova-1083711-2074130.jpg&fm=jpg" alt="Nature Image 1">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.img-container');
+        const totalImages = images.length;
+
+        function showNextImage() {
+             currentIndex = (currentIndex + 1) % totalImages;
+             document.querySelector('.slide-images').style.transform = `translateX(-${currentIndex * 100}%)`;
+           }
+
+        setInterval(showNextImage,5000);
+    </script>
+</body>
+</html>
